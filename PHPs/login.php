@@ -10,21 +10,26 @@
     require('db.php');
     session_start();
     // When form submitted, check and create user session.
+    
     if (isset($_POST['username'])) {
         $username = stripslashes($_REQUEST['username']);    // removes backslashes
         $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
         $password = stripslashes($_REQUEST['password']);
-        $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
         // Check user is exist in the database
         $query = "SELECT * FROM `users` WHERE username=:username AND password=:password";
         $stmt = $con->prepare($query);
-        $hashed_password = md5($password);
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-        $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+        $stmt->bindParam(':password', md5($password), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->rowCount();
+        // Check if funcao_id = 1
         if ($rows == 1) {
             $_SESSION['username'] = $username;
+            if ($_SESSION['username'] == 'root') {
+                // Redirect to X.php
+                header("Location: admin_dashboard.php");
+                exit;
+            }
             // Redirect to user dashboard page
             header("Location: dashboard.php");
         } else {

@@ -21,7 +21,7 @@ include("db.php");
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header bg-primary text-white">
-                        <h4>Games existentes</h4>
+                        <h4>Games existentes (ADMIN)</h4>
                         <h5>(Search 'All' para ver a lista toda)<h5>
                     </div>
                     <div class="card-body">
@@ -123,7 +123,7 @@ include("db.php");
             <div class="col-md-12">
                 <div class="card mt-4">
                 <div class="form">
-                        <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
+                        <p>ADMIN: <?php echo $_SESSION['username']; ?> LOGGED IN</p>
                         <p>You are now in the dashboard page.</p>
                         <p><a href="logout.php">Logout</a></p>
                     </div>
