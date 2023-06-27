@@ -18,8 +18,9 @@
         // Check user is exist in the database
         $query = "SELECT * FROM `users` WHERE username=:username AND password=:password";
         $stmt = $con->prepare($query);
+        $hashed_password = md5($password);
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-        $stmt->bindParam(':password', md5($password), PDO::PARAM_STR);
+        $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->rowCount();
         if ($rows == 1) {

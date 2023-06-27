@@ -1,23 +1,14 @@
-CREATE DATABASE loginsystem;
-Use loginsystem;
+CREATE DATABASE LoginSystem;
+Use LoginSystem;
 
-CREATE TABLE IF NOT EXISTS `loginsystem`.`livro` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `isbn` BIGINT NOT NULL,
-  `titulo` VARCHAR(255) NOT NULL,
-  `escritor` VARCHAR(255) NOT NULL,
-  `anoPublicacao` VARCHAR(4) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`));
-
-
-CREATE TABLE IF NOT EXISTS `loginsystem`.`session` (
+CREATE TABLE IF NOT EXISTS `LoginSystem`.`session` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(300) NULL,
   PRIMARY KEY (`id`));
 
 
-CREATE TABLE IF NOT EXISTS `loginsystem`.`users` (
+CREATE TABLE IF NOT EXISTS `LoginSystem`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
