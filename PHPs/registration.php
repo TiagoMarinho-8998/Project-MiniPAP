@@ -16,7 +16,7 @@
         $create_datetime = date("Y-m-d H:i:s");
 
         // Prepare and execute the insert query with parameters
-        $query = "INSERT into `users` (username, password, email, create_datetime,funcao_id) 
+        $query = "INSERT into `users` (username, password, email, create_datetime,session_id) 
                   VALUES (:username, :password, :email, :create_datetime,2)";
         $stmt = $con->prepare($query);
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
