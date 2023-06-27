@@ -40,4 +40,4 @@ INSERT INTO `session` (`id`, `nome`, `descricao`) VALUES
 
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `create_datetime`,`session_id`) VALUES
-(1, 'root', 'root', '63a9f0ea7bb98050796b649e85481845', '2023-06-23 16:53:00',1);
+(1, 'root', 'root', 'root', '2023-03-17 18:21:00',1);
