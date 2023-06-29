@@ -22,7 +22,7 @@
         $stmt->bindParam(':password', md5($password), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->rowCount();
-        // Check if funcao_id = 1
+        // Check if session_id = 1
         if ($rows == 1) {
             $_SESSION['username'] = $username;
             if ($_SESSION['username'] == 'root') {
