@@ -22,10 +22,10 @@ HTML
 CSS
 
 ## Como executar o projeto
-Clone o repositório na sua máquina
-Importe o arquivo "database/login.sql" para seu banco de dados MySQL
-Configure as informações de conexão do banco de dados no arquivo "src/config.php"
-Abra o arquivo "src/index.php" no navegador web
+- Clone o repositório na sua máquina
+- Importe o arquivo "database/login.sql" para seu banco de dados MySQL
+- Configure as informações de conexão do banco de dados no arquivo "src/config.php"
+- Abra o arquivo "src/index.php" no navegador web
 
 ## Observação
 Este projeto foi desenvolvido apenas para fins educacionais e não deve ser utilizado em produção. O código foi completamente testado mas pode conter vulnerabilidades de segurança.
